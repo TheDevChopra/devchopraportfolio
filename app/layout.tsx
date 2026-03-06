@@ -40,8 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${poppins.variable} ${lexend.variable} antialiased selection:bg-indigo-500/30 selection:text-white bg-[#030303]`}
+        className={`${poppins.variable} ${lexend.variable} antialiased selection:bg-indigo-500/40 selection:text-white bg-[#030303]`}
       >
+        {/* V: 1.0.1 */}
         <div className="noise-overlay" />
         <ClientLayout />
         <div className="relative z-10 min-h-screen flex flex-col">
