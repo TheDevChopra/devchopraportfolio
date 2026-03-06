@@ -42,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${lexend.variable} antialiased selection:bg-indigo-500/40 selection:text-white bg-[#030303]`}
       >
-        {/* V: 1.0.1 */}
+        {/* V: 1.0.2-CLEAN-BUILD */}
         <div className="noise-overlay" />
         <ClientLayout />
         <div className="relative z-10 min-h-screen flex flex-col">
