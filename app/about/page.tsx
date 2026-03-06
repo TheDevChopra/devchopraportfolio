@@ -99,7 +99,7 @@ export default function AboutPage() {
                     className="relative mb-32 h-[450px] w-full rounded-[48px] overflow-hidden group shadow-2xl"
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80"
+                        src="/static/brain/workspace.png"
                         alt="Workspace"
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                     />
