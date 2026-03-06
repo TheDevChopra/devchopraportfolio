@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <div className="w-full">
             {/* Hero Section */}
-            <section className="h-screen w-full relative">
+            <section className="min-h-screen h-auto w-full relative">
                 <FlowGradientHero />
             </section>
 

@@ -259,11 +259,11 @@ export default function FlowGradientHero() {
     }, []);
 
     return (
-        <div className="relative w-full h-full min-h-[110vh] overflow-hidden bg-[#030303]">
+        <div className="relative w-full h-full min-h-[120vh] overflow-hidden bg-[#030303]">
             <div ref={containerRef} className="absolute inset-0 z-0" />
 
             {/* Content Overlay */}
-            <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-[110vh] text-center px-4 pt-56 pb-48">
+            <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-[120vh] text-center px-4 pt-64 pb-60">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
