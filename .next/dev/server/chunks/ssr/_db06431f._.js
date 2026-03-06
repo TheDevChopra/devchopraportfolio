@@ -30,8 +30,8 @@ function FlipCard({ src, index, total, phase, skill, detail, target }) {
         },
         transition: {
             type: "spring",
-            stiffness: 40,
-            damping: 15
+            stiffness: 120,
+            damping: 24
         },
         style: {
             position: "absolute",
@@ -47,10 +47,10 @@ function FlipCard({ src, index, total, phase, skill, detail, target }) {
                 transformStyle: "preserve-3d"
             },
             transition: {
-                duration: 0.6,
+                duration: 0.3,
                 type: "spring",
-                stiffness: 260,
-                damping: 20
+                stiffness: 300,
+                damping: 25
             },
             whileHover: {
                 rotateY: 180
@@ -348,8 +348,8 @@ function ScrollMorphHero() {
         mouseX
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const t1 = setTimeout(()=>setIntroPhase("line"), 500);
-        const t2 = setTimeout(()=>setIntroPhase("circle"), 2000);
+        const t1 = setTimeout(()=>setIntroPhase("line"), 300);
+        const t2 = setTimeout(()=>setIntroPhase("circle"), 1000);
         return ()=>{
             clearTimeout(t1);
             clearTimeout(t2);

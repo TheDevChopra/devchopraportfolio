@@ -31,8 +31,8 @@ function FlipCard({ src, index, total, phase, skill, detail, target }) {
         },
         transition: {
             type: "spring",
-            stiffness: 40,
-            damping: 15
+            stiffness: 120,
+            damping: 24
         },
         style: {
             position: "absolute",
@@ -48,10 +48,10 @@ function FlipCard({ src, index, total, phase, skill, detail, target }) {
                 transformStyle: "preserve-3d"
             },
             transition: {
-                duration: 0.6,
+                duration: 0.3,
                 type: "spring",
-                stiffness: 260,
-                damping: 20
+                stiffness: 300,
+                damping: 25
             },
             whileHover: {
                 rotateY: 180
@@ -376,10 +376,10 @@ function ScrollMorphHero() {
         "ScrollMorphHero.useEffect": ()=>{
             const t1 = setTimeout({
                 "ScrollMorphHero.useEffect.t1": ()=>setIntroPhase("line")
-            }["ScrollMorphHero.useEffect.t1"], 500);
+            }["ScrollMorphHero.useEffect.t1"], 300);
             const t2 = setTimeout({
                 "ScrollMorphHero.useEffect.t2": ()=>setIntroPhase("circle")
-            }["ScrollMorphHero.useEffect.t2"], 2000);
+            }["ScrollMorphHero.useEffect.t2"], 1000);
             return ({
                 "ScrollMorphHero.useEffect": ()=>{
                     clearTimeout(t1);

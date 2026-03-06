@@ -40,8 +40,8 @@ function FlipCard({
             }}
             transition={{
                 type: "spring",
-                stiffness: 40,
-                damping: 15,
+                stiffness: 120,
+                damping: 24,
             }}
             style={{
                 position: "absolute",
@@ -55,7 +55,7 @@ function FlipCard({
             <motion.div
                 className="relative h-full w-full"
                 style={{ transformStyle: "preserve-3d" }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
+                transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 25 }}
                 whileHover={{ rotateY: 180 }}
             >
                 {/* Front Face */}
@@ -240,8 +240,8 @@ export default function ScrollMorphHero() {
     }, [mouseX]);
 
     useEffect(() => {
-        const t1 = setTimeout(() => setIntroPhase("line"), 500);
-        const t2 = setTimeout(() => setIntroPhase("circle"), 2000);
+        const t1 = setTimeout(() => setIntroPhase("line"), 300);
+        const t2 = setTimeout(() => setIntroPhase("circle"), 1000);
         return () => { clearTimeout(t1); clearTimeout(t2); };
     }, []);
 
