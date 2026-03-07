@@ -56,7 +56,6 @@ export function MiniNavbar() {
     const navLinksData = [
         { label: 'About', href: '/about' },
         { label: 'Work', href: '/work' },
-        { label: 'Founder', href: '/founder' },
         { label: 'Skills', href: '/skills' },
         { label: 'Resume', href: '/resume' },
         { label: 'Contact', href: '/contact' },

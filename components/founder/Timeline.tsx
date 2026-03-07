@@ -13,17 +13,17 @@ interface TimelineItemProps {
 const TimelineItem = ({ year, role, company, description, points }: TimelineItemProps) => {
     return (
         <motion.div
-            className="relative pl-8 sm:pl-32 py-6 group"
+            className="relative pl-8 sm:pl-44 py-6 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
         >
-            <div className="hidden sm:flex flex-col items-end absolute left-0 w-24 translate-y-1.5 opacity-60 group-hover:opacity-100 transition-opacity">
+            <div className="hidden sm:flex flex-col items-end absolute left-0 w-36 translate-y-1.5 opacity-60 group-hover:opacity-100 transition-opacity">
                 <span className="text-sm font-mono text-zinc-400">{year}</span>
             </div>
 
-            <div className="absolute left-0 sm:left-32 w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-[#a855f7] transition-colors translate-y-2 -translate-x-[5px]" />
+            <div className="absolute left-0 sm:left-44 w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-[#a855f7] transition-colors translate-y-2 -translate-x-[5px]" />
 
             <div className="sm:hidden mb-2">
                 <span className="text-sm font-mono text-[#a855f7]">{year}</span>
@@ -32,7 +32,9 @@ const TimelineItem = ({ year, role, company, description, points }: TimelineItem
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{role}</h3>
             <h4 className="text-lg text-zinc-400 font-medium mb-4">{company}</h4>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">{description}</p>
+            {description && (
+                <p className="text-zinc-300 leading-relaxed mb-4">{description}</p>
+            )}
 
             {points && points.length > 0 && (
                 <ul className="list-none space-y-2 text-zinc-400">
@@ -51,34 +53,37 @@ const TimelineItem = ({ year, role, company, description, points }: TimelineItem
 export default function Timeline() {
     const experiences = [
         {
-            year: "2025",
-            role: "Founder's Office · Product & Growth",
-            company: "Veena Studio",
-            description: "Embedded with founders building a Web + Desktop DAW.",
+            year: "Jan 2025 – Present",
+            role: "Founder's Office — Product & Growth",
+            company: "Veena Studio · Delaware, USA · Remote",
+            description: "",
             points: [
-                "Led PMF research",
-                "Defined ICP + positioning",
-                "Built social growth engine",
-                "Shipping rapid AI-assisted iterations"
+                "Embedded directly with founders — own product strategy, UI/UX design, and go-to-market for a web & desktop DAW.",
+                "Led full PMF research, ICP mapping, and positioning; built the entire social media marketing system from zero.",
+                "Shipping product iterations in rapid AI-assisted cycles — design to prototype to feedback in days, not weeks."
             ]
         },
         {
-            year: "2023 – 2025",
+            year: "Jun 2023 – Jan 2025",
             role: "Chief Marketing Manager",
-            company: "Healing By Vanshika",
-            description: "Built entire digital presence from scratch.",
+            company: "Healing By Vanshika · New Delhi",
+            description: "",
             points: [
-                "Brand identity",
-                "Website",
-                "Content system",
-                "Acquisition funnels"
+                "Built the brand's entire digital presence from nothing — website, identity, voice, content, and acquisition funnels.",
+                "Managed a nutrition & wellness brand's community growth, content production, and client conversion tracking."
             ]
         },
         {
-            year: "2023",
+            year: "Jan 2023 – Jun 2023",
             role: "Social Media & Brand Manager",
-            company: "Venus Studio",
-            description: "Defined visual strategy and creative output."
+            company: "Venus Studio · Delhi",
+            description: "Defined brand strategy and visual style; led editorial and creative output for a photography studio."
+        },
+        {
+            year: "Jan 2022 – Jan 2023",
+            role: "Content & Digital Strategy Intern",
+            company: "Unschool · Dissent Times · IMUN & Others",
+            description: "Year-long rotational internships in content creation, research, and digital strategy across multiple orgs."
         }
     ];
 
