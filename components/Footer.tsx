@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
+import { ExternalLinkModal } from "@/components/ui/ExternalLinkModal";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -17,20 +18,20 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center space-x-6">
-                    <Link
-                        href="https://github.com/TheDevChopra"
-                        target="_blank"
+                    <ExternalLinkModal
+                        url="https://github.com/TheDevChopra"
+                        title="GitHub"
                         className="text-muted hover:text-white transition-colors p-2 glass border border-white/5 rounded-full"
                     >
                         <Github className="w-5 h-5" />
-                    </Link>
-                    <Link
-                        href="https://www.linkedin.com/in/thedevchopra/"
-                        target="_blank"
+                    </ExternalLinkModal>
+                    <ExternalLinkModal
+                        url="https://www.linkedin.com/in/thedevchopra/"
+                        title="LinkedIn"
                         className="text-muted hover:text-white transition-colors p-2 glass border border-white/5 rounded-full"
                     >
                         <Linkedin className="w-5 h-5" />
-                    </Link>
+                    </ExternalLinkModal>
                 </div>
 
                 <div className="text-muted text-sm">

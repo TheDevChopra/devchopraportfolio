@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Monitor, Palette, QrCode } from "lucide-react";
 import Link from "next/link";
+import { ExternalLinkModal } from "@/components/ui/ExternalLinkModal";
 
 const projects = [
     {
@@ -84,9 +85,9 @@ export default function Work() {
                                 <h4 className="text-2xl font-bold text-white mb-3">{project.title}</h4>
                                 <p className="text-muted mb-8 flex-grow">{project.description}</p>
 
-                                <Link
-                                    href={project.link}
-                                    target="_blank"
+                                <ExternalLinkModal
+                                    url={project.link}
+                                    title={project.title}
                                     className="inline-flex items-center space-x-2 text-white font-semibold transition-all hover:translate-x-2 group/link"
                                 >
                                     <span className="relative">
@@ -94,7 +95,7 @@ export default function Work() {
                                         <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white transform origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300" />
                                     </span>
                                     <ExternalLink className="w-4 h-4" />
-                                </Link>
+                                </ExternalLinkModal>
                             </div>
                         </motion.div>
                     ))}
