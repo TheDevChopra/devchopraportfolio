@@ -27,20 +27,20 @@ const RotatingRoles = () => {
     }, []);
 
     return (
-        <div className="h-20 overflow-hidden mt-2">
+        <span className="inline-flex overflow-hidden align-bottom h-[1em]">
             <AnimatePresence mode="wait">
-                <motion.div
+                <motion.span
                     key={roles[index]}
-                    initial={{ y: 20, opacity: 0 }}
+                    initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
+                    exit={{ y: "-100%", opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-3xl md:text-5xl font-bold text-forest"
+                    className="inline-block text-forest"
                 >
                     {roles[index]}
-                </motion.div>
+                </motion.span>
             </AnimatePresence>
-        </div>
+        </span>
     );
 };
 
@@ -93,10 +93,10 @@ export default function Hero() {
                         I&apos;m <span className="gradient-text">Dev Chopra</span>
                     </h1>
 
-                    <div className="flex flex-col items-center text-center mt-4">
-                        <div className="text-3xl md:text-6xl font-black text-white/80 uppercase tracking-tight flex items-center gap-3">
-                            <span className="text-white">A</span> <RotatingRoles />
-                        </div>
+                    <div className="mt-4">
+                        <h2 className="text-3xl md:text-6xl font-black text-white/80 uppercase tracking-tight">
+                            A <RotatingRoles />
+                        </h2>
                     </div>
 
                     <p className="text-white/50 text-base md:text-lg max-w-2xl leading-relaxed font-medium mt-6">
