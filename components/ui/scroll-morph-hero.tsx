@@ -60,7 +60,7 @@ function FlipCard({
             >
                 {/* Front Face */}
                 <div
-                    className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-xl bg-zinc-900 border border-white/5"
+                    className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl bg-[#0B0B0F] border border-white/10"
                     style={{ backfaceVisibility: "hidden" }}
                 >
                     <img
@@ -68,26 +68,26 @@ function FlipCard({
                         alt={`hero-${index}`}
                         className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
-                    <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-white/60 mb-1">Expertise</p>
+                    <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#0B0B0F]/90 to-transparent">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#9EFFBF]/60 mb-1">Expertise</p>
                         <p className="text-xs font-bold text-white tracking-tight">{skill}</p>
                     </div>
                 </div>
 
                 {/* Back Face */}
                 <div
-                    className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-xl bg-zinc-950 flex flex-col items-center justify-center p-6 border border-white/10"
+                    className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl bg-[#0B0B0F] flex flex-col items-center justify-center p-6 border border-[#0E3B2E]/30"
                     style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                 >
                     <div className="text-center">
-                        <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em] mb-4">Deep Dive</p>
-                        <p className="text-xs font-bold text-white mb-3 tracking-tight">{skill}</p>
+                        <p className="text-[10px] font-black text-[#9EFFBF] uppercase tracking-[0.3em] mb-4">Core // Focus</p>
+                        <p className="text-xs font-bold text-white mb-3 tracking-tight uppercase leading-none">{skill}</p>
                         <p className="text-[10px] font-medium text-white/50 leading-relaxed mb-4">{detail}</p>
-                        <div className="w-8 mx-auto bg-white/10 h-[2px] rounded-full overflow-hidden">
+                        <div className="w-12 mx-auto bg-white/5 h-[3px] rounded-full overflow-hidden">
                             <motion.div
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "100%" }}
-                                className="h-full bg-indigo-500"
+                                className="h-full bg-[#0E3B2E]"
                             />
                         </div>
                     </div>
@@ -270,7 +270,8 @@ export default function ScrollMorphHero() {
     const contentY = useTransform(smoothMorph, [0.8, 1], [30, 0]);
 
     return (
-        <section ref={containerRef} id="skills" className="relative w-full h-screen bg-[#030303] overflow-hidden">
+        <section ref={containerRef} id="skills" className="relative w-full h-screen bg-[#0B0B0F] overflow-hidden selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF]">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
             <div className="flex h-full w-full flex-col items-center justify-center perspective-1000">
 
                 {/* Intro Message */}
@@ -279,9 +280,9 @@ export default function ScrollMorphHero() {
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={introPhase === "circle" && morphValue < 0.4 ? { opacity: 1 - morphValue * 2.5, y: 0, filter: "blur(0px)" } : { opacity: 0, filter: "blur(10px)" }}
                         transition={{ duration: 1 }}
-                        className="text-4xl md:text-6xl font-black tracking-tight text-white mb-6 uppercase"
+                        className="text-4xl md:text-[100px] font-black tracking-tight text-white mb-6 uppercase leading-none"
                     >
-                        Mastering the Stack
+                        Mastering the Stack.
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -302,10 +303,10 @@ export default function ScrollMorphHero() {
                     style={{ opacity: contentOpacity, y: contentY }}
                     className="absolute top-[12%] z-50 flex flex-col items-center justify-center text-center pointer-events-none px-6"
                 >
-                    <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-4 uppercase">
-                        Versatile <span className="gradient-text">Generalist</span>
+                    <h2 className="text-4xl md:text-[120px] font-black text-white tracking-tighter mb-4 uppercase leading-none">
+                        Versatile <span className="text-[#9EFFBF]">Generalist.</span>
                     </h2>
-                    <p className="text-lg text-white/50 max-w-2xl leading-relaxed">
+                    <p className="text-lg text-white/50 max-w-2xl leading-relaxed font-medium">
                         Moving across disciplines with precision. <br />
                         I build products with high agency and deep technical understanding.
                     </p>

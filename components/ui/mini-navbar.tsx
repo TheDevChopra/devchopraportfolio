@@ -4,13 +4,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const AnimatedNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-    const defaultTextColor = 'text-gray-400';
-    const hoverTextColor = 'text-white';
-    const textSizeClass = 'text-sm font-medium';
+    const defaultTextColor = 'text-forest/60';
+    const hoverTextColor = 'text-forest';
+    const textSizeClass = 'text-[10px] font-mono tracking-[0.1em] uppercase';
 
     return (
-        <Link href={href} className={`group relative inline-block overflow-hidden h-5 flex items-center ${textSizeClass}`}>
-            <div className="flex flex-col transition-transform duration-500 ease-in-out transform group-hover:-translate-y-1/2">
+        <Link href={href} className={`group relative inline-block overflow-hidden h-4 flex items-center ${textSizeClass}`}>
+            <div className="flex flex-col transition-transform duration-300 ease-out transform group-hover:-translate-y-1/2">
                 <span className={defaultTextColor}>{children}</span>
                 <span className={hoverTextColor}>{children}</span>
             </div>
@@ -20,7 +20,7 @@ const AnimatedNavLink = ({ href, children }: { href: string; children: React.Rea
 
 export function MiniNavbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [headerShapeClass, setHeaderShapeClass] = useState('rounded-full');
+    const [headerShapeClass, setHeaderShapeClass] = useState('rounded-sm');
     const shapeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const toggleMenu = () => {
@@ -33,10 +33,10 @@ export function MiniNavbar() {
         }
 
         if (isOpen) {
-            setHeaderShapeClass('rounded-2xl');
+            setHeaderShapeClass('rounded-sm');
         } else {
             shapeTimeoutRef.current = setTimeout(() => {
-                setHeaderShapeClass('rounded-full');
+                setHeaderShapeClass('rounded-sm');
             }, 300);
         }
 
@@ -48,8 +48,10 @@ export function MiniNavbar() {
     }, [isOpen]);
 
     const logoElement = (
-        <Link href="/" className="relative w-10 h-10 flex items-center justify-center group">
-            <div className="text-xl font-black text-white tracking-widest group-hover:scale-105 transition-transform">DC</div>
+        <Link href="/" className="relative flex items-center group">
+            <div className="text-sm font-display font-bold text-forest tracking-tighter group-hover:opacity-70 transition-opacity uppercase">
+                Dev <span className="opacity-40">Chopra</span>
+            </div>
         </Link>
     );
 
@@ -64,11 +66,11 @@ export function MiniNavbar() {
     return (
         <header className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-[100]
                        flex flex-col items-center
-                       px-6 py-2.5 backdrop-blur-md
+                       px-6 py-3
                        ${headerShapeClass}
-                       border border-white/10 bg-black/20
+                       border border-forest/10 bg-paper
                        w-[calc(100%-2rem)] sm:w-auto
-                       transition-all duration-300 ease-in-out`}>
+                       transition-all duration-200 linear`}>
 
             <div className="flex items-center justify-between w-full gap-x-8 sm:gap-x-12">
                 <div className="flex items-center">
@@ -86,9 +88,9 @@ export function MiniNavbar() {
                 <div className="hidden sm:flex items-center">
                     <Link
                         href="/contact"
-                        className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-black bg-white rounded-full hover:bg-zinc-200 transition-colors duration-300 shadow-lg shadow-white/5"
+                        className="px-6 py-2 text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-paper bg-forest border border-forest hover:bg-paper hover:text-forest transition-all duration-200 linear"
                     >
-                        Let&apos;s Connect
+                        Connect
                     </Link>
                 </div>
 

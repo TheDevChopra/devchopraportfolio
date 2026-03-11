@@ -5,11 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Work", href: "#work" },
-    { name: "Skills", href: "#skills" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Work", href: "/work" },
+    { name: "Skills", href: "/skills" },
+    { name: "About", href: "/about" },
+    { name: "Resume", href: "/resume" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -26,31 +27,33 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 glass border-b border-white/5" : "py-6 bg-transparent"
+            className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[90%] max-w-4xl rounded-[32px] border border-white/5 ${scrolled ? "bg-[#0B0B0F]/80 backdrop-blur-md" : "bg-black/20 backdrop-blur-md"
                 }`}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-                    DEV<span className="gradient-text tracking-widest ml-1">CHOPRA</span>
+            <div className="px-6 py-3 flex items-center justify-between">
+                <Link href="/" className="text-xl font-black text-white">
+                    DC
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center space-x-6">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-muted hover:text-white transition-colors"
+                            className="text-sm font-medium text-white/60 hover:text-white transition-colors"
                         >
                             {link.name}
                         </Link>
                     ))}
+                </div>
+
+                <div className="hidden md:flex items-center">
                     <Link
-                        href="#contact"
-                        className="relative group px-5 py-2 text-sm font-medium text-white overflow-hidden"
+                        href="/contact"
+                        className="px-6 py-2 bg-white text-[#0B0B0F] text-sm font-bold rounded-[32px] hover:bg-white/90 transition-colors"
                     >
-                        <span className="relative z-10 transition-colors group-hover:text-white">Work With Me</span>
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                        LET'S CONNECT
                     </Link>
                 </div>
 
@@ -93,25 +96,27 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 right-0 glass border-b border-white/5 md:hidden py-6 px-6 flex flex-col space-y-4"
+                        className="absolute top-full left-0 right-0 mt-4 rounded-3xl bg-[#0B0B0F]/90 backdrop-blur-lg border border-white/5 md:hidden py-6 px-6 flex flex-col space-y-4 shadow-xl"
                     >
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-lg font-medium text-muted hover:text-white transition-colors"
+                                className="text-lg font-bold text-white/60 hover:text-white transition-colors text-center"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {link.name}
                             </Link>
                         ))}
-                        <Link
-                            href="#contact"
-                            className="text-lg font-bold gradient-text"
-                            onClick={() => setMobileMenuOpen(false)}
-                        >
-                            Work With Me
-                        </Link>
+                        <div className="pt-4 flex justify-center w-full">
+                            <Link
+                                href="/contact"
+                                className="px-8 py-3 w-full text-center bg-white text-[#0B0B0F] text-lg font-bold rounded-[32px] hover:bg-white/90 transition-colors"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                LET'S CONNECT
+                            </Link>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

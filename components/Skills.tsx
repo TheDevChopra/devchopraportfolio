@@ -17,17 +17,17 @@ const skillsByCategory = [
 
 const SkillMarquee = ({ skills, reverse = false }: { skills: string[], reverse?: boolean }) => {
     return (
-        <div className="relative flex overflow-x-hidden group">
-            <div className={`py-4 animate-marquee flex items-center gap-8 whitespace-nowrap ${reverse ? 'flex-row-reverse animate-marquee-reverse' : ''}`}>
+        <div className="relative flex overflow-x-hidden group border-t border-b border-forest/10 bg-paper">
+            <div className={`py-8 animate-marquee flex items-center gap-12 whitespace-nowrap ${reverse ? 'flex-row-reverse animate-marquee-reverse' : ''}`}>
                 {Array(4).fill(0).map((_, i) => (
-                    <div key={i} className="flex items-center gap-8">
+                    <div key={i} className="flex items-center gap-12">
                         {skills.map((skill, j) => (
                             <span
                                 key={j}
-                                className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-700 hover:text-white transition-colors cursor-default select-none uppercase"
+                                className="text-3xl md:text-5xl font-display font-bold text-forest/20 hover:text-forest transition-colors cursor-default select-none uppercase tracking-tighter"
                             >
                                 {skill}
-                                <span className="mx-8 text-indigo-500/30 font-extrabold text-4xl leading-none">/</span>
+                                <span className="mx-12 text-forest/10 font-mono text-2xl">//</span>
                             </span>
                         ))}
                     </div>
@@ -39,11 +39,11 @@ const SkillMarquee = ({ skills, reverse = false }: { skills: string[], reverse?:
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-24 px-6 overflow-hidden relative">
-            <div className="container mx-auto max-w-6xl section-reveal mb-16">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted mb-4 text-center">Skillset</h3>
-                <h2 className="text-4xl md:text-5xl font-bold text-white text-center">
-                    Building with <span className="gradient-text">Modern Stacks</span>.
+        <section id="skills" className="py-24 px-6 overflow-hidden relative bg-paper">
+            <div className="container mx-auto max-w-6xl section-reveal mb-24 text-left">
+                <h3 className="mono-label mb-6">Process // Technical Stacks</h3>
+                <h2 className="text-6xl md:text-8xl font-display font-bold text-forest uppercase tracking-tighter leading-none">
+                    Capabilities.
                 </h2>
             </div>
 
@@ -78,8 +78,7 @@ export default function Skills() {
         }
       `}</style>
 
-            {/* Background decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-indigo-500/5 blur-[120px] -z-10" />
+            {/* Background decoration removed */}
         </section>
     );
 }

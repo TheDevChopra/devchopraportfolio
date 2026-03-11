@@ -35,7 +35,7 @@ const RotatingRoles = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-3xl md:text-5xl font-bold gradient-text"
+                    className="text-3xl md:text-5xl font-bold text-forest"
                 >
                     {roles[index]}
                 </motion.div>
@@ -46,40 +46,70 @@ const RotatingRoles = () => {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-6">
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-6 bg-[#0B0B0F]">
+            {/* Background Effects */}
+            <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none">
+                <div className="w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-gradient-to-tr from-teal-500/10 via-[#0E3B2E]/30 to-blue-500/10 rounded-full blur-[100px] md:blur-[120px] opacity-60" />
+            </div>
+
+            {/* Grid overlay */}
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-[#0B0B0F] to-transparent z-0 pointer-events-none" />
+
+            <div className="container mx-auto flex flex-col items-center justify-center relative z-10 text-center mt-12">
+                {/* Floating Badges */}
+                <div className="absolute top-[10%] left-[5%] md:left-[15%] hidden lg:block">
+                    <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                        className="px-6 py-2 rounded-full border border-white/5 bg-[#0B0B0F]/60 backdrop-blur-md text-xs font-bold tracking-widest text-white/50 uppercase -rotate-6 shadow-xl"
+                    >
+                        Product Design
+                    </motion.div>
+                </div>
+
+                <div className="absolute top-[20%] right-[5%] md:right-[15%] hidden lg:block">
+                    <motion.div
+                        animate={{ y: [0, 15, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        className="px-6 py-2 rounded-full border border-white/5 bg-[#0B0B0F]/60 backdrop-blur-md text-xs font-bold tracking-widest text-white/50 uppercase rotate-6 shadow-xl"
+                    >
+                        AI & Automation
+                    </motion.div>
+                </div>
+
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="flex flex-col space-y-6"
+                    className="flex flex-col items-center space-y-8 max-w-4xl mx-auto"
                 >
-                    <div className="inline-block px-4 py-1.5 rounded-full glass border border-white/5 text-xs font-medium tracking-widest text-muted uppercase animate-fade-in">
-                        Now Available for New Ventures
+                    <div className="inline-block px-5 py-2 rounded-full border border-[#0E3B2E]/50 bg-[#0E3B2E]/20 text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#9EFFBF] uppercase font-mono shadow-[0_0_15px_rgba(14,59,46,0.3)]">
+                        <span className="inline-block w-2 h-2 rounded-full bg-[#9EFFBF] mr-3 animate-pulse"></span>
+                        Open to new opportunities
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter text-white">
-                        Dev <br /> Chopra
+                    <h1 className="text-7xl md:text-[140px] font-black tracking-tighter text-white leading-[0.9] uppercase">
+                        I'm <span className="gradient-text">Dev Chopra</span>
                     </h1>
 
-                    <div className="flex flex-col">
-                        <h2 className="text-2xl md:text-3xl text-muted font-medium max-w-lg leading-tight">
-                            A startup generalist who builds across product, marketing and AI.
-                        </h2>
-                        <RotatingRoles />
+                    <div className="flex flex-col items-center text-center mt-4">
+                        <div className="text-3xl md:text-6xl font-black text-white/80 uppercase tracking-tight flex items-center gap-3">
+                            <span className="text-white">A</span> <RotatingRoles />
+                        </div>
                     </div>
 
-                    <p className="text-muted text-lg max-w-md leading-relaxed">
-                        I build products, brands and systems, switching between marketing, product and code when required.
+                    <p className="text-white/50 text-base md:text-lg max-w-2xl leading-relaxed font-medium mt-6">
+                        A startup generalist who builds across product, marketing and AI. From strategy to execution, from design to deployment — I deliver.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-8">
                         <MagneticButton>
                             <Link
                                 href="#work"
-                                className="px-8 py-4 rounded-full bg-white text-black font-bold flex items-center space-x-2 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/10"
+                                className="px-8 py-4 bg-white text-[#0B0B0F] rounded-full font-bold uppercase tracking-widest text-xs md:text-sm flex items-center space-x-2 transition-all hover:bg-white/90 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
                             >
-                                <span>View Work</span>
+                                <span>View Portfolio</span>
                                 <MoveRight className="w-5 h-5 ml-2" />
                             </Link>
                         </MagneticButton>
@@ -87,7 +117,7 @@ export default function Hero() {
                             <Link
                                 href="https://github.com/TheDevChopra"
                                 target="_blank"
-                                className="px-8 py-4 rounded-full glass border border-white/10 text-white font-bold flex items-center space-x-3 transition-all hover:bg-white/5 active:scale-95"
+                                className="px-8 py-4 bg-[#0B0B0F]/50 backdrop-blur-sm border border-white/20 text-white rounded-full font-bold uppercase tracking-widest text-xs md:text-sm flex items-center space-x-3 transition-all hover:bg-white/10 active:scale-95"
                             >
                                 <Github className="w-5 h-5 mr-2" />
                                 <span>GitHub</span>
@@ -95,51 +125,7 @@ export default function Hero() {
                         </MagneticButton>
                     </div>
                 </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center"
-                >
-                    {/* Animated Blob */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-indigo-500/30 via-purple-500/30 to-pink-500/30 rounded-full blur-[80px] animate-blob mix-blend-screen" />
-                        <div className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-gradient-to-tr from-blue-400/20 to-purple-400/20 rounded-full blur-[100px] animate-pulse mix-blend-soft-light" />
-                    </div>
-
-                    <div className="relative z-10 w-full h-full flex items-center justify-center">
-                        <motion.div
-                            animate={{
-                                y: [0, -20, 0],
-                            }}
-                            transition={{
-                                duration: 6,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="relative p-1 rounded-3xl glass shadow-2xl border border-white/10 overflow-hidden"
-                        >
-                            <div className="w-[280px] h-[350px] md:w-[400px] md:h-[500px] bg-zinc-900 overflow-hidden rounded-[calc(1.5rem-2px)] relative group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-pink-500/10 z-0" />
-                                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                                    <div className="text-4xl font-bold text-white mb-2 leading-tight">High Agency</div>
-                                    <div className="text-xl text-muted">Execution across design, growth and AI.</div>
-                                </div>
-                                {/* Visual abstract details */}
-                                <div className="absolute top-10 right-10 w-24 h-24 border border-indigo-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-45" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent -rotate-45" />
-                            </div>
-                        </motion.div>
-                    </div>
-                </motion.div>
             </div>
-
-            {/* Decorative dots/grid */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-                style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-            <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-[#030303] to-transparent z-0" />
         </section>
     );
 }

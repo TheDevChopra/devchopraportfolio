@@ -52,49 +52,45 @@ const projects = [
 
 export default function Work() {
     return (
-        <section id="work" className="py-24 px-6 relative overflow-hidden bg-zinc-950/50">
-            <div className="container mx-auto max-w-6xl section-reveal">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">Featured Work</h3>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white">
-                            Built, Shipped & <span className="gradient-text">Scaled</span>.
+        <section id="work" className="py-24 px-6 relative overflow-hidden bg-[#0B0B0F]">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="container mx-auto max-w-6xl section-reveal relative z-10">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-x-12 border-b border-white/10 pb-12">
+                    <div className="space-y-6">
+                        <h3 className="mono-label text-white/50">Index: 03 // Featured Work</h3>
+                        <h2 className="text-6xl md:text-8xl lg:text-[100px] font-display font-black text-white leading-none uppercase tracking-tighter">
+                            Built, Shipped <br /> & Scaled.
                         </h2>
                     </div>
-                    <p className="text-muted max-w-sm text-lg leading-relaxed">
-                        I don&apos;t just build features; I build products that solve real problems.
-                        Execution is everything.
-                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-white/5">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            className="group relative p-[1px] rounded-3xl overflow-hidden glass transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+                            className="group relative p-12 border-r border-b border-white/5 glass transition-all duration-300 hover:bg-white/5"
                         >
-                            {/* Animated Gradient Border */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 via-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-
-                            <div className="relative z-10 p-8 flex flex-col h-full bg-zinc-900/90 rounded-[calc(1.5rem-1px)]">
-                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6 shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
-                                    <project.icon className="w-7 h-7 text-white" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#0E3B2E]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0" />
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="flex items-center justify-between mb-8">
+                                    <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
+                                        <project.icon className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="mono-label text-white/50">Project {String(index + 1).padStart(2, '0')}</span>
                                 </div>
 
-                                <h4 className="text-2xl font-bold text-white mb-3">{project.title}</h4>
-                                <p className="text-muted mb-8 flex-grow">{project.description}</p>
+                                <h4 className="text-4xl font-display font-bold text-white uppercase mb-6">{project.title}</h4>
+                                <p className="text-white/60 mb-12 flex-grow font-medium leading-relaxed">{project.description}</p>
 
                                 <ExternalLinkModal
                                     url={project.link}
                                     title={project.title}
-                                    className="inline-flex items-center space-x-2 text-white font-semibold transition-all hover:translate-x-2 group/link"
+                                    className="inline-flex items-center space-x-3 text-[#9EFFBF] hover:text-white transition-colors font-mono text-[10px] font-bold uppercase tracking-[0.2em] group/link"
                                 >
                                     <span className="relative">
-                                        View Project
-                                        <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white transform origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300" />
+                                        Execute Action (View)
                                     </span>
-                                    <ExternalLink className="w-4 h-4" />
+                                    <ExternalLink className="w-3 h-3 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                                 </ExternalLinkModal>
                             </div>
                         </motion.div>
@@ -102,8 +98,7 @@ export default function Work() {
                 </div>
             </div>
 
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
         </section>
     );
 }

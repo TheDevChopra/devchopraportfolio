@@ -1,4 +1,4 @@
-import FlowGradientHero from "@/components/ui/flow-gradient-hero-section";
+import Hero from "@/components/Hero";
 import SkillsMarquee from "@/components/SkillsMarquee";
 import Work from "@/components/Work";
 import About from "@/components/About";
@@ -9,9 +9,7 @@ export default function Home() {
     return (
         <div className="w-full">
             {/* Hero Section */}
-            <section className="min-h-screen h-auto w-full relative">
-                <FlowGradientHero />
-            </section>
+            <Hero />
 
             {/* About Section Preview */}
             <About />

@@ -16,13 +16,14 @@ const domains = [
 
 export default function Domains() {
     return (
-        <section id="domains" className="py-24 px-6 relative overflow-hidden">
-            <div className="container mx-auto max-w-6xl section-reveal">
+        <section id="domains" className="py-24 px-6 relative overflow-hidden bg-[#0B0B0F]">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="container mx-auto max-w-6xl section-reveal relative z-10">
                 <div className="flex flex-col items-center justify-center text-center space-y-6 mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 leading-tight">
-                        Things I <span className="gradient-text">Work Across</span>.
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-2 leading-tight uppercase">
+                        Things I <span className="text-[#9EFFBF]">Work Across</span>.
                     </h2>
-                    <p className="text-muted text-xl max-w-2xl leading-relaxed">
+                    <p className="text-white/60 text-xl max-w-2xl mx-auto leading-relaxed font-medium">
                         From coding a new feature to designing a multi-channel growth system,
                         I operate with high intelligence across these core domains.
                     </p>
@@ -34,11 +35,11 @@ export default function Domains() {
                             key={index}
                             whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="group p-8 glass border border-white/5 rounded-3xl flex flex-col items-center justify-center space-y-4 hover:border-white/10 relative overflow-hidden perspective-1000"
+                            className="group p-8 glass rounded-[calc(1.5rem-2px)] flex flex-col items-center justify-center space-y-4 hover:border-[#0E3B2E]/50 transition-all relative overflow-hidden perspective-1000"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                            <div className="w-16 h-16 rounded-full glass border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+                            <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
                                 <domain.icon className={`w-8 h-8 ${domain.color} group-hover:scale-110 transition-transform`} />
                             </div>
 

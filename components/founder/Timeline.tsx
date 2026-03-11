@@ -2,106 +2,90 @@
 
 import { motion } from "framer-motion";
 
-interface TimelineItemProps {
-    year: string;
-    role: string;
-    company: string;
-    description: string;
-    points?: string[];
-}
-
-const TimelineItem = ({ year, role, company, description, points }: TimelineItemProps) => {
-    return (
-        <motion.div
-            className="relative pl-8 sm:pl-44 py-6 group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-        >
-            <div className="hidden sm:flex flex-col items-end absolute left-0 w-36 translate-y-1.5 opacity-60 group-hover:opacity-100 transition-opacity">
-                <span className="text-sm font-mono text-zinc-400">{year}</span>
-            </div>
-
-            <div className="absolute left-0 sm:left-44 w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-[#a855f7] transition-colors translate-y-2 -translate-x-[5px]" />
-
-            <div className="sm:hidden mb-2">
-                <span className="text-sm font-mono text-[#a855f7]">{year}</span>
-            </div>
-
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{role}</h3>
-            <h4 className="text-lg text-zinc-400 font-medium mb-4">{company}</h4>
-
-            {description && (
-                <p className="text-zinc-300 leading-relaxed mb-4">{description}</p>
-            )}
-
-            {points && points.length > 0 && (
-                <ul className="list-none space-y-2 text-zinc-400">
-                    {points.map((point, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                            <span className="text-zinc-600 mt-1.5 text-[10px]">●</span>
-                            <span>{point}</span>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </motion.div>
-    );
-};
+const timelineData = [
+    {
+        date: "Jan 2025 – Present",
+        role: "Founder's Office — Product & Growth",
+        company: "Veena Studio",
+        location: "Delaware, USA · Remote",
+        desc: [
+            "Embedded directly with founders — own product strategy, UI/UX design, and go-to-market for a web & desktop DAW.",
+            "Led full PMF research, ICP mapping, and positioning; built the entire social media marketing system from zero.",
+            "Shipping product iterations in rapid AI-assisted cycles — design to prototype to feedback in days, not weeks."
+        ]
+    },
+    {
+        date: "Jun 2023 – Jan 2025",
+        role: "Chief Marketing Manager",
+        company: "Healing By Vanshika",
+        location: "New Delhi",
+        desc: [
+            "Built the brand's entire digital presence from nothing — website, identity, voice, content, and acquisition funnels.",
+            "Managed a nutrition & wellness brand's community growth, content production, and client conversion tracking."
+        ]
+    },
+    {
+        date: "Jan 2023 – Jun 2023",
+        role: "Social Media & Brand Manager",
+        company: "Venus Studio",
+        location: "Delhi",
+        desc: ["Defined brand strategy and visual style; led editorial and creative output for a photography studio."]
+    },
+    {
+        date: "Jan 2022 – Jan 2023",
+        role: "Content & Digital Strategy Intern",
+        company: "Unschool · Dissent Times · IMUN & Others",
+        location: "Remote",
+        desc: ["Year-long rotational internships in content creation, research, and digital strategy across multiple orgs."]
+    }
+];
 
 export default function Timeline() {
-    const experiences = [
-        {
-            year: "Jan 2025 – Present",
-            role: "Founder's Office — Product & Growth",
-            company: "Veena Studio · Delaware, USA · Remote",
-            description: "",
-            points: [
-                "Embedded directly with founders — own product strategy, UI/UX design, and go-to-market for a web & desktop DAW.",
-                "Led full PMF research, ICP mapping, and positioning; built the entire social media marketing system from zero.",
-                "Shipping product iterations in rapid AI-assisted cycles — design to prototype to feedback in days, not weeks."
-            ]
-        },
-        {
-            year: "Jun 2023 – Jan 2025",
-            role: "Chief Marketing Manager",
-            company: "Healing By Vanshika · New Delhi",
-            description: "",
-            points: [
-                "Built the brand's entire digital presence from nothing — website, identity, voice, content, and acquisition funnels.",
-                "Managed a nutrition & wellness brand's community growth, content production, and client conversion tracking."
-            ]
-        },
-        {
-            year: "Jan 2023 – Jun 2023",
-            role: "Social Media & Brand Manager",
-            company: "Venus Studio · Delhi",
-            description: "Defined brand strategy and visual style; led editorial and creative output for a photography studio."
-        },
-        {
-            year: "Jan 2022 – Jan 2023",
-            role: "Content & Digital Strategy Intern",
-            company: "Unschool · Dissent Times · IMUN & Others",
-            description: "Year-long rotational internships in content creation, research, and digital strategy across multiple orgs."
-        }
-    ];
-
     return (
-        <section className="max-w-4xl mx-auto px-6 py-24">
-            <motion.h2
-                className="text-3xl font-bold text-white mb-16 inline-flex flex-col"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-            >
-                Experience
-            </motion.h2>
+        <section id="timeline" className="py-24 px-6 bg-paper">
+            <div className="max-w-5xl mx-auto">
+                <div className="flex flex-col gap-4 mb-20 border-b border-forest/10 pb-8">
+                    <h3 className="mono-label">Chronology // Career Trace</h3>
+                    <h2 className="text-6xl md:text-8xl font-display font-bold text-forest uppercase tracking-tighter">Timeline.</h2>
+                </div>
 
-            <div className="relative border-l border-zinc-800 ml-3 sm:ml-0">
-                {experiences.map((exp, index) => (
-                    <TimelineItem key={index} {...exp} />
-                ))}
+                <div className="relative border-l border-forest/10 ml-4 md:ml-0">
+                    {timelineData.map((item, index) => (
+                        <div key={index} className="relative pl-12 pb-24 last:pb-0">
+                            {/* Static Square Marker */}
+                            <div className="absolute left-[-5px] top-2 w-[10px] h-[10px] bg-forest" />
+
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 mt-1">
+                                <div className="space-y-4">
+                                    <div className="flex items-center space-x-3">
+                                        <span className="mono-label px-3 py-1 border border-forest/10 text-forest/40">
+                                            {item.date}
+                                        </span>
+                                        <span className="mono-label text-[10px] tracking-widest text-forest opacity-30">// 0{index + 1}</span>
+                                    </div>
+                                    <h3 className="text-4xl md:text-5xl font-display font-bold text-forest uppercase tracking-tighter leading-none">
+                                        {item.role}
+                                    </h3>
+                                    <p className="text-xl font-bold text-forest/40 uppercase tracking-widest leading-none">
+                                        {item.company}
+                                    </p>
+                                </div>
+                                <div className="text-left md:text-right">
+                                    <span className="mono-label text-forest/30 uppercase">{item.location}</span>
+                                </div>
+                            </div>
+
+                            <ul className="space-y-6 max-w-3xl">
+                                {item.desc.map((d, i) => (
+                                    <li key={i} className="flex items-start gap-4 text-forest/70 text-lg font-medium leading-relaxed">
+                                        <div className="w-1.5 h-1.5 bg-forest/10 mt-2.5 shrink-0" />
+                                        <span>{d}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );

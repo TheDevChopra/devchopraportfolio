@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import { Poppins, Lexend } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { MiniNavbar } from "@/components/ui/mini-navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientLayout from "@/components/ClientLayout";
 import { Analytics } from "@vercel/analytics/next";
 
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
-const lexend = Lexend({
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-lexend",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -41,13 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${poppins.variable} ${lexend.variable} antialiased selection:bg-indigo-500/40 selection:text-white bg-[#030303]`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetBrainsMono.variable} antialiased selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF] bg-[#0B0B0F]`}
       >
-        {/* V: 1.0.2-CLEAN-BUILD */}
         <div className="noise-overlay" />
         <ClientLayout />
         <div className="relative z-10 min-h-screen flex flex-col">
-          <MiniNavbar />
+          <Navbar />
           <main className="flex-grow pt-24 sm:pt-0">
             {children}
           </main>

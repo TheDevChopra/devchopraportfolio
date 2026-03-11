@@ -23,12 +23,13 @@ const skillsRows = [
 
 export default function SkillsMarquee() {
     return (
-        <section id="skills-marquee" className="py-24 bg-[#030303] overflow-hidden">
-            <div className="container mx-auto px-6 mb-16 text-center">
-                <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+        <section id="skills-marquee" className="py-24 bg-[#0B0B0F] overflow-hidden border-t border-white/5 relative">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="container mx-auto px-6 mb-16 text-center relative z-10">
+                <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
                     Modern <span className="gradient-text">Stacks</span>.
                 </h2>
-                <p className="text-muted text-lg max-w-2xl mx-auto">
+                <p className="text-white/60 text-lg max-w-2xl mx-auto font-medium">
                     Hyper-efficient workflows powered by AI and decades of design-thinking principles.
                 </p>
             </div>
@@ -49,7 +50,7 @@ export default function SkillsMarquee() {
                             {[...row.items, ...row.items, ...row.items, ...row.items].map((item, i) => (
                                 <div
                                     key={i}
-                                    className="px-8 py-4 glass border border-white/5 rounded-2xl text-lg font-bold text-white/50 hover:text-white hover:border-white/20 transition-all cursor-default"
+                                    className="px-8 py-4 glass rounded-full text-lg font-bold text-white/50 hover:text-white hover:border-[#0E3B2E] transition-all cursor-default font-mono"
                                 >
                                     {item}
                                 </div>

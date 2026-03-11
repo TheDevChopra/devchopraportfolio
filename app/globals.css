@@ -1,116 +1,90 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Lexend", sans-serif;
-  --font-display: "Poppins", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", "Google Sans Code", monospace;
 
-  --color-background: #030303;
-  --color-foreground: #fafafa;
-  --color-muted: #a1a1aa;
-  --color-accent: #18181b;
-  --color-accent-hover: #27272a;
+  --color-background: #0B0B0F;
+  --color-foreground: #FFFFFF;
+  --color-muted: rgba(255, 255, 255, 0.5);
+  --color-accent: #0E3B2E;
+
+  /* Legacy variable mappings for secondary pages */
+  --color-paper: #0B0B0F;
+  --color-forest: #FFFFFF;
 
   --animate-noise: noise 0.2s infinite;
-  --animate-blob: blob 7s infinite alternate;
-  --animate-fade-in: fadeIn 0.8s ease-out forwards;
-  --animate-float: float 6s ease-in-out infinite;
-
-  @keyframes noise {
-    0% {
-      transform: translate(0, 0);
-    }
-
-    10% {
-      transform: translate(-5%, -5%);
-    }
-
-    20% {
-      transform: translate(-10%, 5%);
-    }
-
-    30% {
-      transform: translate(5%, -10%);
-    }
-
-    40% {
-      transform: translate(-5%, 15%);
-    }
-
-    50% {
-      transform: translate(-10%, 5%);
-    }
-
-    60% {
-      transform: translate(15%, 0);
-    }
-
-    70% {
-      transform: translate(0, 10%);
-    }
-
-    80% {
-      transform: translate(-15%, 0);
-    }
-
-    90% {
-      transform: translate(10%, 5%);
-    }
-
-    100% {
-      transform: translate(5%, 0);
-    }
-  }
-
-  @keyframes blob {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-  }
-
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  --animate-fade-in: fadeIn 0.4s linear forwards;
 }
 
 :root {
-  --background: #030303;
-  --foreground: #fafafa;
-  --muted: #a1a1aa;
-  --accent: #18181b;
-  --accent-hover: #27272a;
+  --background: #0B0B0F;
+  --foreground: #FFFFFF;
+  --muted: rgba(255, 255, 255, 0.5);
+  --accent: #0E3B2E;
+  --border: rgba(14, 59, 46, 0.4);
 }
+
+@keyframes noise {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -5%);
+  }
+
+  20% {
+    transform: translate(-10%, 5%);
+  }
+
+  30% {
+    transform: translate(5%, -10%);
+  }
+
+  40% {
+    transform: translate(-5%, 15%);
+  }
+
+  50% {
+    transform: translate(-10%, 5%);
+  }
+
+  60% {
+    transform: translate(15%, 0);
+  }
+
+  70% {
+    transform: translate(0, 10%);
+  }
+
+  80% {
+    transform: translate(-15%, 0);
+  }
+
+  90% {
+    transform: translate(10%, 5%);
+  }
+
+  100% {
+    transform: translate(5%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 body {
   background-color: var(--background);
@@ -127,6 +101,18 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+/* Technical Minimalist Utilities */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
 }
 
 .noise-overlay {
@@ -142,29 +128,24 @@ h6 {
 }
 
 .glass {
-  background: rgba(24, 24, 27, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(250, 250, 250, 0.1);
+  background: rgba(11, 11, 15, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.cursor-glow {
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0) 70%);
-  pointer-events: none;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
+.bg-grid {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* Custom Scrollbar */

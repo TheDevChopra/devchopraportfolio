@@ -5,24 +5,21 @@ import { Download, ExternalLink } from "lucide-react";
 
 export default function DownloadResume() {
     return (
-        <section className="max-w-3xl mx-auto px-6 py-32 text-center">
+        <section className="max-w-5xl mx-auto px-6 py-32 text-center">
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="glass rounded-3xl p-12 border border-[#a855f7]/20 relative overflow-hidden group"
+                className="p-20 border border-forest/10 bg-paper relative overflow-hidden group"
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-[#a855f7]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                <h2 className="text-4xl font-bold text-white mb-8 relative z-10">Want the full resume?</h2>
+                <h2 className="text-5xl md:text-8xl font-display font-bold text-forest mb-16 tracking-tighter leading-none uppercase">Full Dossier.</h2>
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
                     <a
                         href="/resume/Dev_Chopra_Resume.pdf"
                         download
-                        className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.1)] w-full sm:w-auto justify-center"
+                        className="px-12 py-6 bg-forest text-paper font-mono font-bold text-xs uppercase tracking-[0.2em] transition-all border border-forest hover:bg-paper hover:text-forest w-full sm:w-auto"
                     >
-                        <Download className="w-5 h-5" />
                         Download PDF
                     </a>
 
@@ -30,10 +27,9 @@ export default function DownloadResume() {
                         href="/resume/Dev_Chopra_Resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 px-8 py-4 text-white rounded-full font-medium text-lg hover:bg-white/10 transition-colors border border-white/20 w-full sm:w-auto justify-center"
+                        className="px-12 py-6 bg-paper text-forest font-mono font-bold text-xs uppercase tracking-[0.2em] transition-all border border-forest/20 hover:border-forest w-full sm:w-auto"
                     >
-                        <ExternalLink className="w-5 h-5" />
-                        Open PDF
+                        Open In Browser
                     </a>
                 </div>
             </motion.div>

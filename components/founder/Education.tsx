@@ -16,33 +16,36 @@ export default function Education() {
     ];
 
     return (
-        <section className="max-w-4xl mx-auto px-6 py-24">
-            <motion.h2
-                className="text-3xl font-bold text-white mb-12"
+        <section className="max-w-5xl mx-auto px-6 py-24 border-b border-forest/10">
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                className="mb-16 border-b border-forest/10 pb-8 text-left"
             >
-                Education
-            </motion.h2>
+                <h3 className="mono-label mb-4">Foundation // Scholarly Bases</h3>
+                <h2 className="text-5xl md:text-7xl font-display font-bold text-forest uppercase tracking-tighter leading-none">Education.</h2>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-forest/10">
                 {education.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="glass rounded-2xl p-8 border border-white/5 relative overflow-hidden group"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        className="relative p-12 border-r border-b border-forest/10 bg-paper hover:bg-forest/[0.02] transition-all group"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: index * 0.2, duration: 0.6 }}
                     >
-                        <div className="absolute -inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-white/30 transition-all duration-500" />
-
-                        <h3 className="text-xl font-bold text-white mb-3">{item.school}</h3>
-                        <p className="text-zinc-300 font-medium mb-2">{item.degree}</p>
-                        {item.focus && (
-                            <p className="text-sm text-zinc-500 font-mono tracking-wide">{item.focus}</p>
-                        )}
+                        <div className="space-y-6">
+                            <span className="mono-label text-forest/30 uppercase tracking-[0.2em] text-[10px]">Level // 0{index + 1}</span>
+                            <h3 className="text-3xl font-display font-bold text-forest uppercase tracking-tighter leading-tight leading-none">{item.school}</h3>
+                            <div className="space-y-2">
+                                <p className="text-xl font-bold text-forest/70 leading-none uppercase tracking-widest leading-none">{item.degree}</p>
+                                {item.focus && (
+                                    <p className="text-sm font-bold text-forest/40 uppercase tracking-[0.2em]">{item.focus}</p>
+                                )}
+                            </div>
+                        </div>
                     </motion.div>
                 ))}
             </div>

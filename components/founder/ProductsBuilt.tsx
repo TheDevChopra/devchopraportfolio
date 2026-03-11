@@ -14,34 +14,31 @@ export default function ProductsBuilt() {
     ];
 
     return (
-        <section id="projects" className="max-w-5xl mx-auto px-6 py-24">
+        <section id="projects" className="max-w-5xl mx-auto px-6 py-24 border-b border-forest/10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-16"
+                className="mb-16 border-b border-forest/10 pb-8"
             >
-                <h2 className="text-3xl font-bold text-white mb-4">Products Built</h2>
-                <p className="text-zinc-400 font-mono text-sm uppercase">Solo-Built Using AI-Native Tools</p>
+                <h3 className="mono-label mb-4 px-3 py-1 border border-forest/10 inline-block">Archive // Shipped Projects</h3>
+                <h2 className="text-5xl md:text-7xl font-display font-bold text-forest uppercase tracking-tighter leading-none">Products Built.</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-forest/10">
                 {products.map((product, index) => (
                     <ExternalLinkModal key={index} url={product.link} title={product.name} className="w-full">
                         <motion.div
-                            className="group glass relative overflow-hidden rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-white/20 h-full"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            className="group relative p-12 border-r border-b border-forest/10 bg-paper hover:bg-forest/[0.02] transition-all flex items-center justify-between"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                            <div className="flex justify-between items-center relative z-10 w-full">
-                                <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-colors">
-                                    {product.name}
-                                </h3>
-                                <ExternalLink className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
+                            <h3 className="text-3xl font-display font-bold text-forest uppercase tracking-tighter leading-none">
+                                {product.name}
+                            </h3>
+                            <div className="p-3 border border-forest/10 text-forest/40 group-hover:text-forest group-hover:border-forest transition-all">
+                                <ExternalLink className="w-4 h-4" />
                             </div>
                         </motion.div>
                     </ExternalLinkModal>

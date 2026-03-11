@@ -19,33 +19,32 @@ export default function CurrentlyBuilding() {
     ];
 
     return (
-        <section className="max-w-4xl mx-auto px-6 py-24">
+        <section className="max-w-5xl mx-auto px-6 py-24 border-b border-forest/10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-12"
+                className="mb-12 border-b border-forest/10 pb-8"
             >
-                <h2 className="text-3xl font-bold text-white mb-2">Currently Building</h2>
-                <p className="text-zinc-400 font-mono text-sm uppercase">Research & Development</p>
+                <h3 className="mono-label mb-4">Pipeline // Active R&D</h3>
+                <h2 className="text-5xl md:text-7xl font-display font-bold text-forest uppercase tracking-tighter leading-none">Currently Building.</h2>
             </motion.div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col border-l border-t border-forest/10">
                 {projects.map((project, index) => (
                     <motion.div
                         key={index}
-                        className="group relative glass rounded-full px-8 py-6 overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        className="group relative p-12 border-r border-b border-forest/10 bg-paper hover:bg-forest/[0.02] transition-all"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: index * 0.15, duration: 0.6 }}
                     >
-                        {/* Glowing effect on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                            <h3 className="text-xl font-bold text-white min-w-[200px]">{project.name}</h3>
-                            <p className="text-zinc-400">{project.description}</p>
+                        <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+                            <div className="space-y-4 md:min-w-[280px]">
+                                <span className="mono-label text-forest/30 uppercase tracking-widest text-[10px]">Active // 0{index + 1}</span>
+                                <h3 className="text-3xl font-display font-bold text-forest uppercase tracking-tighter leading-none">{project.name}</h3>
+                            </div>
+                            <p className="text-forest/60 text-lg font-medium leading-relaxed max-w-2xl">{project.description}</p>
                         </div>
                     </motion.div>
                 ))}

@@ -14,24 +14,19 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
     return (
-        <div className="min-h-screen bg-[#030303] text-zinc-400 selection:bg-indigo-500/30 selection:text-white">
-            {/* Dynamic ambient glow corresponding to scroll position could be added here later */}
-
-            <main className="w-full pb-20 overflow-x-hidden">
+        <div className="min-h-screen bg-[#0B0B0F] text-white selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF] relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <main className="w-full pb-20 overflow-x-hidden relative z-10">
                 <FounderHero />
-
                 <div className="relative">
-                    {/* Subtle background gradient separator */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-px bg-forest/10" />
                     <Timeline />
                 </div>
-
                 <ProductsBuilt />
                 <CurrentlyBuilding />
                 <Education />
                 <Achievements />
                 <DownloadResume />
-
             </main>
         </div>
     );

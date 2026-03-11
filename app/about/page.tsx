@@ -90,24 +90,24 @@ const achievements = [
 
 export default function AboutPage() {
     return (
-        <div className="container mx-auto px-6 py-24 min-h-screen">
-            <div className="max-w-6xl mx-auto">
+        <div className="min-h-screen bg-[#0B0B0F] text-white selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF] relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="container mx-auto px-6 py-24 relative z-10 max-w-6xl mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
-                    className="relative mb-32 h-[450px] w-full rounded-[48px] overflow-hidden group shadow-2xl"
+                    className="relative mb-32 h-[500px] w-full border border-white/10 overflow-hidden group rounded-2xl"
                 >
                     <img
                         src="/static/brain/workspace.png"
                         alt="Workspace"
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-all duration-700 grayscale hover:grayscale-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                    <div className="absolute bottom-16 left-16 max-w-2xl px-4">
-                        <div className="mb-6 h-1 w-24 bg-indigo-500 rounded-full" />
-                        <h1 className="text-6xl md:text-8xl font-black text-white leading-tight mb-4 uppercase tracking-tighter">
-                            Generalist <br /> <span className="gradient-text">Builder</span>.
+                    <div className="absolute inset-x-0 bottom-0 p-12 bg-[#0B0B0F]/90 border-t border-white/10 backdrop-blur-sm">
+                        <h3 className="mono-label mb-4 text-[#9EFFBF]">Profile // Generalist Builder</h3>
+                        <h1 className="text-7xl md:text-[140px] font-black text-white leading-none uppercase tracking-tighter">
+                            Generalist <br /> <span className="text-[#9EFFBF]">Builder.</span>
                         </h1>
                     </div>
                 </motion.div>
@@ -115,13 +115,13 @@ export default function AboutPage() {
                 {/* Narrative Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start mb-48">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="space-y-12"
                     >
-                        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight uppercase leading-tight">Bridging <span className="text-indigo-500">Software</span> and <span className="text-purple-500">Hardware</span>.</h2>
-                        <div className="space-y-8 text-2xl text-muted leading-relaxed font-medium tracking-tight">
+                        <h2 className="text-5xl md:text-[100px] font-black text-white tracking-tighter uppercase leading-[0.85]">Bridging Software <br /> and Hardware.</h2>
+                        <div className="space-y-8 text-xl text-white/70 leading-relaxed font-medium">
                             <p>
                                 I build things I can&apos;t stop thinking about — from ideation to shipped product. Spanning product strategy, UI/UX design, marketing, and AI-assisted development.
                             </p>
@@ -132,15 +132,13 @@ export default function AboutPage() {
                     </motion.div>
 
                     <div className="grid grid-cols-1 gap-8">
-                        <div className="p-8 glass border border-white/5 rounded-[40px] group transition-all">
-                            <h3 className="text-sm font-black text-white/40 uppercase tracking-[0.3em] mb-8">Achievements</h3>
+                        <div className="p-10 border border-white/10 bg-white/5 glass rounded-2xl shadow-2xl">
+                            <h3 className="mono-label mb-8 text-[#9EFFBF]">Index: 04 // Achievements</h3>
                             <div className="space-y-6">
                                 {achievements.map((item, i) => (
                                     <div key={i} className="flex items-start gap-4 group/item">
-                                        <div className="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center mt-1">
-                                            <Award className="w-3 h-3 text-indigo-400" />
-                                        </div>
-                                        <p className="text-white/70 group-hover/item:text-white transition-colors text-sm font-medium">{item}</p>
+                                        <div className="w-1.5 h-1.5 bg-[#9EFFBF]/50 mt-2 shrink-0 rounded-full" />
+                                        <p className="text-white/70 group-hover/item:text-white transition-colors text-sm font-medium tracking-tight leading-snug">{item}</p>
                                     </div>
                                 ))}
                             </div>
@@ -150,36 +148,33 @@ export default function AboutPage() {
 
                 {/* Experience Section */}
                 <section className="mb-48">
-                    <div className="flex items-center gap-6 mb-16 overflow-visible">
-                        <div className="p-4 rounded-3xl bg-indigo-500/10 border border-indigo-500/20">
-                            <Briefcase className="w-8 h-8 text-indigo-400" />
-                        </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight overflow-visible">Professional <span className="gradient-text">Journey</span></h2>
+                    <div className="flex flex-col gap-4 mb-16 border-b border-white/10 pb-8">
+                        <h3 className="mono-label text-[#9EFFBF]">Archive // Professional Journey</h3>
+                        <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">Experience.</h2>
                     </div>
 
-                    <div className="space-y-12">
+                    <div className="border-l border-white/10">
                         {experience.map((job, idx) => (
                             <motion.div
                                 key={idx}
-                                className="p-10 glass border border-white/5 rounded-[40px] hover:bg-white/5 transition-all relative overflow-hidden group"
+                                className="p-12 border-b border-r border-white/10 hover:bg-white/5 transition-all relative overflow-hidden group"
                             >
-                                <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${job.color} opacity-0 group-hover:opacity-5 blur-[120px] transition-opacity`} />
-
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                                    <div>
-                                        <h3 className="text-3xl font-black text-white uppercase tracking-tight mb-2">{job.role}</h3>
-                                        <p className="text-xl font-bold text-indigo-400 uppercase tracking-widest">{job.company}</p>
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#0E3B2E]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0" />
+                                <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 relative z-10">
+                                    <div className="space-y-4">
+                                        <span className="mono-label text-white/40">{job.date}</span>
+                                        <h3 className="text-4xl font-black text-white uppercase tracking-tighter leading-none">{job.role}</h3>
+                                        <p className="text-xl font-bold text-[#9EFFBF] uppercase tracking-widest leading-none">{job.company}</p>
                                     </div>
-                                    <div className="text-right">
-                                        <p className="text-lg font-black text-white mb-1 uppercase tracking-tighter">{job.date}</p>
-                                        <p className="text-sm font-bold text-white/40 uppercase tracking-widest">{job.location}</p>
+                                    <div className="text-left md:text-right">
+                                        <p className="mono-label text-white/40">{job.location}</p>
                                     </div>
                                 </div>
 
-                                <ul className="space-y-4 max-w-4xl">
+                                <ul className="space-y-6 max-w-3xl relative z-10">
                                     {job.desc.map((d, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-muted leading-relaxed font-medium">
-                                            <div className="w-2 h-2 rounded-full bg-white/20 mt-2.5 shrink-0" />
+                                        <li key={i} className="flex items-start gap-4 text-white/70 text-lg font-medium leading-relaxed">
+                                            <div className="w-1.5 h-1.5 bg-[#9EFFBF]/30 mt-2.5 shrink-0 rounded-full" />
                                             <span>{d}</span>
                                         </li>
                                     ))}
@@ -191,20 +186,18 @@ export default function AboutPage() {
 
                 {/* Education Section */}
                 <section className="mb-48">
-                    <div className="flex items-center gap-6 mb-16 overflow-visible">
-                        <div className="p-4 rounded-3xl bg-purple-500/10 border border-purple-500/20">
-                            <GraduationCap className="w-8 h-8 text-purple-400" />
-                        </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight overflow-visible">Scholarly <span className="gradient-text">Background</span></h2>
+                    <div className="flex flex-col gap-4 mb-16 border-b border-white/10 pb-8">
+                        <h3 className="mono-label text-[#9EFFBF]">Academic // Foundations</h3>
+                        <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">Scholarly.</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-white/10">
                         {education.map((edu, i) => (
-                            <div key={i} className="p-10 glass border border-white/5 rounded-[40px] hover:border-white/10 transition-all">
-                                <p className="text-xs font-black text-indigo-400 uppercase tracking-[0.2em] mb-4">{edu.date}</p>
-                                <h3 className="text-2xl font-black text-white uppercase tracking-tight leading-tight mb-4">{edu.degree}</h3>
-                                <p className="text-lg font-bold text-white/60 mb-6">{edu.school}</p>
-                                <p className="text-sm text-muted leading-relaxed">{edu.desc}</p>
+                            <div key={i} className="p-12 border-r border-b border-white/10 glass hover:bg-white/5 transition-all">
+                                <p className="mono-label mb-6 text-white/40">{edu.date}</p>
+                                <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-tight mb-6">{edu.degree}</h3>
+                                <p className="text-xl font-bold text-[#9EFFBF] mb-8 leading-none uppercase tracking-widest">{edu.school}</p>
+                                <p className="text-base text-white/60 leading-relaxed font-medium">{edu.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -212,23 +205,22 @@ export default function AboutPage() {
 
                 {/* Philosophy CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-16 glass border border-white/10 rounded-[60px] text-center relative overflow-hidden group mb-32"
+                    className="p-16 border border-white/10 bg-white/5 glass text-center relative overflow-hidden group mb-32 rounded-2xl"
                 >
-                    <div className="absolute top-0 right-0 p-12 opacity-10 blur-xl pointer-events-none group-hover:opacity-20 transition-opacity">
-                        <Code2 className="w-64 h-64 text-indigo-500" />
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0E3B2E]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0" />
+                    <div className="relative z-10">
+                        <h2 className="text-5xl md:text-8xl font-black text-white mb-12 tracking-tighter leading-[0.85] uppercase">Philosophical <br /> Stack.</h2>
 
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-10 tracking-tight leading-none uppercase">The <span className="gradient-text">Philosophical</span> Stack</h2>
-
-                    <div className="flex flex-wrap justify-center gap-6 mt-12 max-w-4xl mx-auto">
-                        {["Agency Over Consensus", "Design as Function", "Code as Leverage", "AI as Coworker", "Execution as Truth", "Customer Obsession"].map((phi) => (
-                            <div key={phi} className="px-8 py-4 rounded-full glass border border-white/20 text-sm font-black uppercase tracking-widest text-white hover:bg-white transition-all hover:text-black cursor-default">
-                                {phi}
-                            </div>
-                        ))}
+                        <div className="flex flex-wrap justify-center gap-4 mt-12 max-w-4xl mx-auto">
+                            {["Agency Over Consensus", "Design as Function", "Code as Leverage", "AI as Coworker", "Execution as Truth", "Customer Obsession"].map((phi) => (
+                                <div key={phi} className="px-6 py-3 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/60 hover:bg-white hover:text-black transition-all cursor-default relative z-10">
+                                    {phi}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>

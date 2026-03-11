@@ -32,14 +32,15 @@ const stats = [
 
 export default function About() {
     return (
-        <section id="about" className="py-24 px-6 relative overflow-hidden">
-            <div className="container mx-auto max-w-6xl section-reveal">
+        <section id="about" className="py-24 px-6 relative overflow-hidden bg-[#0B0B0F]">
+            <div className="absolute inset-0 bg-grid z-0 opacity-10 pointer-events-none"></div>
+            <div className="container mx-auto max-w-6xl section-reveal relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white uppercase leading-tight">
-                            The Startup <br /><span className="gradient-text">Generalist</span>.
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white uppercase leading-tight">
+                            The Startup <br /><span className="text-[#9EFFBF]">Generalist</span>.
                         </h2>
-                        <div className="space-y-6 text-muted text-lg leading-relaxed font-medium">
+                        <div className="space-y-6 text-white/70 text-lg leading-relaxed font-medium">
                             <p>
                                 I operate at the intersection of product, marketing, and engineering. Currently driving strategy in the <span className="text-white font-bold">Founder&apos;s Office</span> at Veena Studio and specializing in Gen AI at <span className="text-white font-bold">BITSoM</span>.
                             </p>
@@ -57,14 +58,14 @@ export default function About() {
                             <motion.div
                                 key={index}
                                 whileHover={{ y: -10 }}
-                                className="p-6 glass border border-white/5 rounded-2xl flex flex-col space-y-4 relative group"
+                                className="p-6 glass rounded-2xl flex flex-col space-y-4 relative group transition-all"
                             >
                                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl -z-10`} />
-                                <div className="w-12 h-12 rounded-xl glass border border-white/10 flex items-center justify-center mb-2">
+                                <div className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center mb-2">
                                     <stat.icon className="w-6 h-6 text-white" />
                                 </div>
                                 <div className="text-3xl font-bold text-white">{stat.value}</div>
-                                <div className="text-sm text-muted uppercase tracking-wider">{stat.label}</div>
+                                <div className="text-sm text-white/60 uppercase tracking-wider font-mono">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -72,7 +73,7 @@ export default function About() {
             </div>
 
             {/* Decorative Blob */}
-            <div className="absolute top-1/2 -right-1/4 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 -right-1/4 w-[400px] h-[400px] bg-[#0E3B2E]/30 rounded-full blur-[120px] -z-10 pointer-events-none" />
         </section>
     );
 }
