@@ -35,7 +35,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mono-label text-forest/40">
-                    &copy; {currentYear} // All rights reserved.
+                    &copy; {currentYear} {"//"} All rights reserved.
                 </div>
             </div>
         </footer>

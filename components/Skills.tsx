@@ -27,7 +27,7 @@ const SkillMarquee = ({ skills, reverse = false }: { skills: string[], reverse?:
                                 className="text-3xl md:text-5xl font-display font-bold text-forest/20 hover:text-forest transition-colors cursor-default select-none uppercase tracking-tighter"
                             >
                                 {skill}
-                                <span className="mx-12 text-forest/10 font-mono text-2xl">//</span>
+                                <span className="mx-12 text-forest/10 font-mono text-2xl">{"//"}</span>
                             </span>
                         ))}
                     </div>

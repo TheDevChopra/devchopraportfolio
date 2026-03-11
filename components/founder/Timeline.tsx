@@ -61,7 +61,7 @@ export default function Timeline() {
                                         <span className="mono-label px-3 py-1 border border-forest/10 text-forest/40">
                                             {item.date}
                                         </span>
-                                        <span className="mono-label text-[10px] tracking-widest text-forest opacity-30">// 0{index + 1}</span>
+                                        <span className="mono-label text-[10px] tracking-widest text-forest opacity-30">{"//"} 0{index + 1}</span>
                                     </div>
                                     <h3 className="text-4xl md:text-5xl font-display font-bold text-forest uppercase tracking-tighter leading-none">
                                         {item.role}

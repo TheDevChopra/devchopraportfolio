@@ -90,7 +90,7 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-7xl md:text-[140px] font-black tracking-tighter text-white leading-[0.9] uppercase">
-                        I'm <span className="gradient-text">Dev Chopra</span>
+                        I&apos;m <span className="gradient-text">Dev Chopra</span>
                     </h1>
 
                     <div className="flex flex-col items-center text-center mt-4">

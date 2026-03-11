@@ -1,0 +1,139 @@
+﻿
+> devchopra-portfolio@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.1.11
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (:String) [],    
+ RemoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+Failed to compile.
+
+./app/about/page.tsx
+102:21  Warning: Using 
+`<img>` could result 
+in slower LCP and 
+higher bandwidth. 
+Consider using `<Image 
+/>` from `next/image` 
+or a custom image 
+loader to 
+automatically optimize 
+images. This may incur 
+additional usage or 
+cost from your 
+provider. See: https://
+nextjs.org/docs/message
+s/no-img-element  @next
+/next/no-img-element
+
+./app/work/page.tsx
+109:37  Warning: Using 
+`<img>` could result 
+in slower LCP and 
+higher bandwidth. 
+Consider using `<Image 
+/>` from `next/image` 
+or a custom image 
+loader to 
+automatically optimize 
+images. This may incur 
+additional usage or 
+cost from your 
+provider. See: https://
+nextjs.org/docs/message
+s/no-img-element  @next
+/next/no-img-element
+
+./components/Footer.tsx
+38:41  Error: Comments 
+inside children 
+section of tag should 
+be placed inside 
+braces  react/jsx-no-co
+mment-textnodes
+
+./components/founder/Ti
+meline.tsx
+64:121  Error: 
+Comments inside 
+children section of 
+tag should be placed 
+inside braces  react/js
+x-no-comment-textnodes
+
+./components/Hero.tsx
+93:26  Error: `'` can 
+be escaped with 
+`&apos;`, `&lsquo;`, 
+`&#39;`, `&rsquo;`.  re
+act/no-unescaped-entiti
+es
+
+./components/Navbar.tsx
+56:28  Error: `'` can 
+be escaped with 
+`&apos;`, `&lsquo;`, 
+`&#39;`, `&rsquo;`.  re
+act/no-unescaped-entiti
+es
+117:36  Error: `'` can 
+be escaped with 
+`&apos;`, `&lsquo;`, 
+`&#39;`, `&rsquo;`.  re
+act/no-unescaped-entiti
+es
+
+./components/Skills.tsx
+30:91  Error: Comments 
+inside children 
+section of tag should 
+be placed inside 
+braces  react/jsx-no-co
+mment-textnodes
+
+./components/ui/scroll-
+morph-hero.tsx
+66:21  Warning: Using 
+`<img>` could result 
+in slower LCP and 
+higher bandwidth. 
+Consider using `<Image 
+/>` from `next/image` 
+or a custom image 
+loader to 
+automatically optimize 
+images. This may incur 
+additional usage or 
+cost from your 
+provider. See: https://
+nextjs.org/docs/message
+s/no-img-element  @next
+/next/no-img-element
+
+info  - Need to 
+disable some ESLint 
+rules? Learn more 
+here: https://nextjs.or
+g/docs/app/api-referenc
+e/config/eslint#disabli
+ng-rules
