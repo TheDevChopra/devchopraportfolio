@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import { ExternalLinkModal } from "@/components/ui/ExternalLinkModal";
 
 export default function ProductsBuilt() {
     const products = [
@@ -27,7 +26,7 @@ export default function ProductsBuilt() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-l border-forest/10">
                 {products.map((product, index) => (
-                    <ExternalLinkModal key={index} url={product.link} title={product.name} className="w-full">
+                    <a key={index} href={product.link} target="_blank" rel="noopener noreferrer" className="w-full">
                         <motion.div
                             className="group relative p-12 border-r border-b border-forest/10 bg-paper hover:bg-forest/[0.02] transition-all flex items-center justify-between"
                             initial={{ opacity: 0 }}
@@ -41,7 +40,7 @@ export default function ProductsBuilt() {
                                 <ExternalLink className="w-4 h-4" />
                             </div>
                         </motion.div>
-                    </ExternalLinkModal>
+                    </a>
                 ))}
             </div>
         </section>

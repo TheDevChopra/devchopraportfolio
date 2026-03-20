@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import Link from "next/link";
-import { ExternalLinkModal } from "@/components/ui/ExternalLinkModal";
 
 export default function Contact() {
     return (
@@ -30,21 +29,23 @@ export default function Contact() {
                         <span>Send Email</span>
                     </Link>
 
-                    <ExternalLinkModal
-                        url="https://www.linkedin.com/in/thedevchopra/"
-                        title="LinkedIn"
+                    <a
+                        href="https://www.linkedin.com/in/thedevchopra/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group px-10 py-5 bg-[#0B0B0F]/50 backdrop-blur-sm border border-white/20 text-white rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:bg-white/10 active:scale-95"
                     >
                         <span>LinkedIn</span>
-                    </ExternalLinkModal>
+                    </a>
 
-                    <ExternalLinkModal
-                        url="https://github.com/TheDevChopra"
-                        title="GitHub"
+                    <a
+                        href="https://github.com/TheDevChopra"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group px-10 py-5 bg-[#0B0B0F]/50 backdrop-blur-sm border border-white/20 text-white rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:bg-white/10 active:scale-95"
                     >
                         <span>GitHub</span>
-                    </ExternalLinkModal>
+                    </a>
                 </div>
 
                 <div className="p-12 glass border border-white/10 rounded-2xl max-w-lg mx-auto overflow-hidden relative group shadow-2xl">
