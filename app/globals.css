@@ -4,6 +4,7 @@
   --font-sans: "Inter", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", "Google Sans Code", monospace;
+  --font-hero: var(--font-lexend), "Lexend", sans-serif;
 
   --color-background: #0B0B0F;
   --color-foreground: #FFFFFF;

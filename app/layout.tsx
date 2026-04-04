@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +19,11 @@ const inter = Inter({
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+});
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${jetBrainsMono.variable} antialiased selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF] bg-[#0B0B0F]`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetBrainsMono.variable} ${lexend.variable} antialiased selection:bg-[#0E3B2E]/50 selection:text-[#9EFFBF] bg-[#0B0B0F]`}
       >
         <div className="noise-overlay" />
         <ClientLayout />

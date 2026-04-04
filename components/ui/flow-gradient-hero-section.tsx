@@ -212,7 +212,7 @@ export default function FlowGradientHero() {
                         <span className="text-[10px] font-mono font-bold text-forest tracking-[0.2em] uppercase">Status: Open for opportunities</span>
                     </div>
 
-                    <h1 className="text-7xl md:text-[120px] font-display font-bold text-forest leading-[0.85] tracking-tighter mb-12 uppercase">
+                    <h1 className="text-7xl md:text-[120px] font-hero font-bold text-forest leading-[0.85] tracking-tighter mb-12 uppercase">
                         I&apos;m Dev <br /> Chopra
                     </h1>
 
@@ -224,7 +224,7 @@ export default function FlowGradientHero() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
                                 transition={{ duration: 0.3 }}
-                                className="text-4xl md:text-7xl font-display font-bold text-forest uppercase"
+                                className="text-4xl md:text-7xl font-hero font-bold text-forest uppercase"
                             >
                                 {ROLES[roleIndex]}
                             </motion.h2>
